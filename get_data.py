@@ -40,9 +40,9 @@ for page in tPages:
         try:
             rs = requests.get(url + "/" + page['href'], verify=True)
             bsoup = bso(rs.text, "lxml")
-        except:
+        except requests.exceptions.RequestException as e:
             print("No se ha podido obtener la URL de la búsqueda o información de la misma.\n")
-            exit()
+            raise SystemExit(e)
             
         #Intentamos obtener el total de enlaces de la nueva página
         print("Intentando obtener los enlaces de la pagina: " + url + "/" + page['href'] + "\n")
