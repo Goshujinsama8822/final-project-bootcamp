@@ -26,5 +26,5 @@ jobs:
             pip install pandas
 
         - name: execute py script
-          run: python3 get_data.py
+          run: python3 -u get_data.py
             
