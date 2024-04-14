@@ -15,9 +15,9 @@ print('Tratando de realizar la petición a la URL...\n')
 try:
     r = requests.get(url, verify=True)
     soup = bso(r.text, 'lxml')
-except:
+except requests.exceptions.RequestException as e:
     print('No se ha podido obtener la URL de la búsqueda o información de la misma.\n')
-    exit()
+    raise SystemExit(e)
 
 #Intentamos obtener el total de enlaces en la página
 print('Intentando obtener el total de enlaces en la página...\n')
