@@ -122,7 +122,7 @@ for page in tPages:
                 
                 for j in range(0, len(mData.iloc[:,1])):
                     if mData.iloc[j,1] == str(npage['href'][17:]).replace(".csv", ""):
-                        print("Encontrado" + str(npage['href'][17:]).replace(".csv", "") + ", procesando...")
+                        print("Encontrado " + str(npage['href'][17:]).replace(".csv", "") + ", procesando...")
                         data['Precipitación(mm)'] = data['Precipitación(mm)'].replace("-", np.nan)
                         data['Precipitación(mm)'] = pd.to_numeric(data['Precipitación(mm)'], errors="coerce")
                         mData.iloc[j,12] = data['Precipitación(mm)'].min()
@@ -130,8 +130,8 @@ for page in tPages:
                         mData.iloc[j,14] = data['Precipitación(mm)'].mean()
                         continue
                 
-            # if i == 5:
-            #     break
+            if i == 5:
+                break
             
         k = 0
         dlist = []
