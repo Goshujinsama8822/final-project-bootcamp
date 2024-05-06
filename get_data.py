@@ -219,8 +219,8 @@ for page in tPages:
                         continue
 
             #Si solo queremos obtener una cantidad determinada de estaciones por categoría, cambiamos el valor de i en la siguiente linea, o podemos comentar directamente ambas lineas si queremos obtener los datos de todas las estaciones.    
-            if i == 20:
-                break
+            #if i == 20:
+            #    break
             
         k = 0
         dlist = []
